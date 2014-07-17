@@ -1,0 +1,35 @@
+<h2>タスク一覧</h2>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span6">
+            <table class="table table-striped">
+              <tbody>
+                <% @tasks.each do |task| %>
+                <tr>
+                  <td width="60%">
+                    <%= task.content %>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-info">
+                      <%= link_to 'Show', task %>
+                    </button>
+                    <button type="button" class="btn btn-warning">
+                      <%= link_to 'Edit', edit_task_path(task) %>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                    <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </button>
+                  </td>
+
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</div>
+
