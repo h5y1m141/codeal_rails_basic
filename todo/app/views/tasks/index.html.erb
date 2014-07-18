@@ -13,15 +13,15 @@
                     <%= task.content %>
                   </td>
                   <td>
-                    <button type="button" class="btn btn-info">
-                      <%= link_to 'Show', task %>
+                      <%= link_to '<button type="button" class="btn btn-info"><i class="glyphicon glyphicon-info-sign"></i>表示</button>'.html_safe, task %>
+                    
+                    <!-- <button type="button" class="btn btn-warning"> -->
+                    <!--   <%= link_to 'Edit', edit_task_path(task) %> -->
+                    <!-- </button> -->
+                      <%= link_to '<button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove-sign"></i>削除</button>'.html_safe, task, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+                      <!-- <%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %> -->
                     </button>
-                    <button type="button" class="btn btn-warning">
-                      <%= link_to 'Edit', edit_task_path(task) %>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                    <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </button>
+
                   </td>
 
                 </tr>
