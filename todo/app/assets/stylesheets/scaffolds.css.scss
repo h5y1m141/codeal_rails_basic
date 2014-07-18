@@ -69,3 +69,21 @@ div {
     list-style: square;
   }
 }
+
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -150px; 
+}
+.footer, .push {
+    height: 150px; 
+
+}
+.navbar-fixed-bottom {
+  content: "";
+  border-top: 0;
+  color:#ececec;
+  background-color: #222;
+}

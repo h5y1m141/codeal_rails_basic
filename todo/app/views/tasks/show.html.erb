@@ -3,31 +3,18 @@
 <div　class="container">
   <div class="row">
     <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
+
+      <article class="thumbnail">
         <img src="<%= asset_path "todo.jpg" %>" />
-      </div>
-      <div class="caption">
-         <h3>タスク名： <%= @task.content %></h3>
-         <p>
-           <button type="button" class="btn btn-primary">
-             <%= link_to '戻る', tasks_path %>
-           </button>
+        <h3>タスク名： <%= @task.content %></h3>
+        <p>
+          <%= link_to '<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-circle-arrow-left"></i>　戻る</button>'.html_safe, tasks_path %>
 
-           <button type="button" class="btn btn-warning">
-             <%= link_to '編集する', edit_task_path(@task) %> 
-           </button>
+          <%= link_to '<button type="button" class="btn btn"><i class="glyphicon glyphicon-edit"></i>　編集する</button>'.html_safe, edit_task_path(@task) %>
+        </p>
 
-         </p>
-      </div>
-   </div>
-    
-    <div class="col-sm-6 col-md3">
-      <h3>
-        <span class="glyphicon glyphicon-search"></span>
-        <button type="button" class="btn btn-primary">タスク名： <%= @task.content %>        </button>
+      </article>
 
-
-    </h3></div>
     </div>
   </div>
 </div>
