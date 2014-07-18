@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span12">
@@ -21,9 +22,15 @@
             <%= f.text_area :content , class: 'form-control', rows: '5' %>
           </div>
           <div class="actions">
-            <%= link_to '<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-circle-arrow-left"></i>　一覧画面に戻る</button>'.html_safe, tasks_path %>
-            <%= f.submit "更新する" , class: 'btn btn-danger' %>
             
+            <% if request.path_info == "/tasks/new" then%>
+              <%= f.submit "登録する" , class: 'btn  btn-primary' %>
+              <%= link_to '<button type="button" class="btn btn-danger">中止する</button>'.html_safe, tasks_path %>
+
+            <% else %>
+              <%= link_to '<button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-circle-arrow-left"></i>　一覧画面に戻る</button>'.html_safe, tasks_path %>
+              <%= f.submit "更新する" , class: 'btn btn-danger' %>
+            <% end %>
           </div>
           <% end %>
 
